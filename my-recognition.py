@@ -13,7 +13,7 @@ parser.add_argument("filename", type=str, help="filename of the image to process
 parser.add_argument("out_filename", type=str, help="filename of intended output" )
 
 
-# normal vs abnormal
+# normal vs abnormal model
 
 parser.add_argument("--model1", type=str,
     default="/home/ethan/jetson-inference/python/training/classification/models/knee-classification/resnet152.onnx", help="path to retrained ONNX model")
@@ -22,10 +22,10 @@ parser.add_argument("--labels1", type=str,
     default="/home/ethan/jetson-inference/python/training/classification/models/knee-classification/labels.txt", help="path to labels.txt file")
 
 
-# osteopenia vs osteoporosis
+# osteopenia vs osteoporosis model 
 
 parser.add_argument("--model2", type=str,
-    default="/home/ethan/jetson-inference/python/training/classification/models/knee-classification-abnormal/resnet152.onnx", help="path to retrained ONNX model")
+    default="/home/ethan/jetson-inference/python/training/classification/models/knee-classification-3/densenet121.onnx", help="path to retrained ONNX model")
 
 parser.add_argument("--labels2", type=str,
     default="/home/ethan/jetson-inference/python/training/classification/models/knee-classification-abnormal/labels.txt", help="path to labels.txt file")
@@ -53,12 +53,12 @@ for i in range(net1.GetNumClasses()):
 
 
     
-# logic to split between the normal vs abnormal models and the other models
+# logic to split between the normal vs abnormal models so when the stage 1 model doesn't detect normal, the stage 2 model will activate
 
 stage1_label = net1.GetClassDesc(class_idx1).strip().lower()
 print(f"[DEBUG] Stage‑1 prediction: '{stage1_label}' @ {confidence1:.2%}")
 
-NORMAL_INDEX = 1  
+NORMAL_INDEX = 0  
 
 if class_idx1 == NORMAL_INDEX and confidence1 >= 0.60:
     final_class = class_desc1
@@ -69,14 +69,16 @@ else:
         labels=opt.labels2,
         input_blob=opt.input_blob,
         output_blob=opt.output_blob)
+    
+
+    class_idx2, confidence2 = net2.Classify(img)
+    class_desc2 = net2.GetClassDesc(class_idx2)
+
     print("Stage-2 model:", opt.model2)
     print("Stage-2 labels file:", opt.labels2)
     print("Stage‑2 classes:")
     for i in range(net2.GetNumClasses()):
         print(f"{i}: {net2.GetClassDesc(i)}")
-
-    class_idx2, confidence2 = net2.Classify(img)
-    class_desc2 = net2.GetClassDesc(class_idx2)
 
     final_idx = class_idx2
     final_class = str(class_desc2)
