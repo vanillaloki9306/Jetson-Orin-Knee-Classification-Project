@@ -1,6 +1,8 @@
 # Jetson-Orin-Knee-Classification-Project
 Learning AI training with knee classification utilizing x-ray images.
 
+The goal of the project is to demonstrate AI capabilities in differentiating between medical x-ray images. This challenges the AI because x-ray scans are hard to identify, and conditions that are similar are hard to spot.
+
 ![osteoporosis-test9](https://github.com/user-attachments/assets/c24888f9-10aa-41fe-9af0-b793e2ea6cf3)
 Image of osteoporosis x-ray scan  labelled by AI
 ![osteopenia-test10](https://github.com/user-attachments/assets/4f5eb501-3b46-4982-801f-09f3ae51d5d7)
