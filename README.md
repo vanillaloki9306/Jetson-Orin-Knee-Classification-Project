@@ -34,5 +34,5 @@ The code follows a two-stage logic, where the first stage differentiates between
 7. Test the models with a few photos.
 8. Make sure to include pytorch, densenet121 comes with it.
 
-
+https://youtu.be/_4QKulyB-_A
 
