@@ -26,6 +26,7 @@ The code follows a two-stage logic, where the first stage differentiates between
   --pretrained data/knee-classification-3"
 4. Repeat this twice, with any model deemed reasonable. I used resnet152 for my stage 1 model and densenet121 for my stage 2 model.
 5. Export the models and include their paths as an argument in a python file.
-6. Test the models with a few photos.
+  https://github.com/vanillaloki9306/Jetson-Orin-Knee-Classification-Project/blob/main/my-recognition.py
+7. Test the models with a few photos.
 8. Make sure to include pytorch.
 
