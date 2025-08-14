@@ -5,8 +5,10 @@ The goal of the project is to demonstrate AI capabilities in differentiating bet
 
 ![osteoporosis-test9](https://github.com/user-attachments/assets/c24888f9-10aa-41fe-9af0-b793e2ea6cf3)
 Image of osteoporosis x-ray scan  labelled by AI
+
 ![osteopenia-test10](https://github.com/user-attachments/assets/4f5eb501-3b46-4982-801f-09f3ae51d5d7)
 Image of osteopenia x-ray scan labelled by AI
+
 ![normal-test20](https://github.com/user-attachments/assets/b4792bbb-dfd4-4527-af77-033d84460cb7)
 Image of a normal knee x-ray scan labelled by AI
 
@@ -30,5 +32,7 @@ The code follows a two-stage logic, where the first stage differentiates between
 5. Export the models and include their paths as an argument in a python file.
   https://github.com/vanillaloki9306/Jetson-Orin-Knee-Classification-Project/blob/main/my-recognition.py
 7. Test the models with a few photos.
-8. Make sure to include pytorch.
+8. Make sure to include pytorch, densenet121 comes with it.
+
+
 
