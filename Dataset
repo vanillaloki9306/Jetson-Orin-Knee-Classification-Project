@@ -1,0 +1,9 @@
+import kagglehub
+
+# Download latest version
+path = kagglehub.dataset_download("fuyadhasanbhoyan/knee-osteoarthritis-classification-224224")
+
+print("Path to dataset files:", path)
+
+
+https://www.kaggle.com/datasets/fuyadhasanbhoyan/knee-osteoarthritis-classification-224224
