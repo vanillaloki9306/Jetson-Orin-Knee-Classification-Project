@@ -20,7 +20,7 @@ The code follows a two-stage logic, where the first stage differentiates between
 
 1. Find or create a dataset with classes and labels. Make sure it is sorted by test/train/val. In my case, I used a dataset organized by Fuyad Hasan Bhoyan on kaggle https://www.kaggle.com/datasets/fuyadhasanbhoyan/knee-osteoarthritis-classification-224224.
 2. Unzip the dataset into jetson-inference. It should be found in jetson-inference/python/training/classification/data
-3. Open the docker from jetson-inference and navigate back into the python/training/classification directory. There, begin training. In my case, I used the command 
+3. Open the docker from jetson-inference and navigate back into the python/training/classification directory. There, begin training. I retrained my model using a dataset from kaggle on top of resnet152 and densenet121 pretrained models. In my case, I used the command 
 "python3 train.py \
   --model-dir=models/knee-classification-3 \
   --arch=densenet121 \
@@ -36,4 +36,5 @@ The code follows a two-stage logic, where the first stage differentiates between
 
 Video explanation of the work process
 https://youtu.be/_4QKulyB-_A
+# btw oliver didn't do any contribution we jst share a computer
 
