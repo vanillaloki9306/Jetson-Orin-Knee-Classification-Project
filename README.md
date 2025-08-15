@@ -36,5 +36,3 @@ The code follows a two-stage logic, where the first stage differentiates between
 
 Video explanation of the work process
 https://youtu.be/_4QKulyB-_A
-# btw oliver didn't do any contribution we jst share a computer
-
