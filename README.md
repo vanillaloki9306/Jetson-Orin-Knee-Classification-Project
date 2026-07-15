@@ -1,5 +1,5 @@
 # Jetson-Orin-Knee-Classification-Project
-Learning AI training with knee classification utilizing x-ray images.
+Learning AI training with knee classification utilizing x-ray images. (August 2025)
 
 The goal of the project is to demonstrate AI capabilities in differentiating between medical x-ray images. This challenges the AI because x-ray scans are hard to identify, and conditions that are similar are hard to spot.
 
